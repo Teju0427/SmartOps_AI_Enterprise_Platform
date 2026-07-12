@@ -1,0 +1,44 @@
+{
+  "global_feature_importance": [
+    {
+      "feature": "tool_wear_min",
+      "mean_abs_shap": 2.22938
+    },
+    {
+      "feature": "tool_wear_ratio",
+      "mean_abs_shap": 2.19758
+    },
+    {
+      "feature": "temp_delta_k",
+      "mean_abs_shap": 0.77289
+    },
+    {
+      "feature": "rotational_speed_rpm",
+      "mean_abs_shap": 0.73822
+    },
+    {
+      "feature": "wear_torque_product",
+      "mean_abs_shap": 0.63174
+    },
+    {
+      "feature": "power_watts",
+      "mean_abs_shap": 0.41976
+    },
+    {
+      "feature": "torque_nm",
+      "mean_abs_shap": 0.39955
+    },
+    {
+      "feature": "air_temperature_k",
+      "mean_abs_shap": 0.18197
+    },
+    {
+      "feature": "type_encoded",
+      "mean_abs_shap": 0.06313
+    },
+    {
+      "feature": "process_temperature_k",
+      "mean_abs_shap": 0.0551
+    }
+  ]
+}

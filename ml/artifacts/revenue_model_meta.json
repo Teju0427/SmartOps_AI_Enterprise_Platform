@@ -1,0 +1,43 @@
+{
+  "model_name": "revenue_forecast",
+  "model_version": "gbr-revenue-v1",
+  "trained_at": "2026-07-11T07:16:36.116602+00:00",
+  "feature_columns": [
+    "lag_1",
+    "lag_2",
+    "lag_4",
+    "rolling_mean_4",
+    "week_of_year_sin",
+    "week_of_year_cos"
+  ],
+  "revenue_metrics": {
+    "mae": 55615.35,
+    "r2_score": 0.531,
+    "naive_baseline_mae": 73406.31,
+    "train_set_size": 58,
+    "test_set_size": 15
+  },
+  "profit_metrics": {
+    "mae": 27913.27,
+    "r2_score": 0.4791,
+    "naive_baseline_mae": 35949.76,
+    "train_set_size": 58,
+    "test_set_size": 15
+  },
+  "granularity_trained_on": "weekly_national",
+  "latest_revenue_state": {
+    "week_start": "2026-07-06",
+    "lag_1": 139953.90000000002,
+    "lag_2": 69454.72,
+    "lag_4": 101054.01000000001,
+    "rolling_mean_4": 97123.095
+  },
+  "latest_profit_state": {
+    "lag_1": 69392.14,
+    "lag_2": 28196.07,
+    "lag_4": 43484.07,
+    "rolling_mean_4": 44745.0175
+  },
+  "latest_utilization_proxy": 0.28888888888888886,
+  "historical_avg_margin": 0.4492374359545212
+}

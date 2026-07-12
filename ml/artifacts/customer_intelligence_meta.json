@@ -1,0 +1,67 @@
+{
+  "model_name": "customer_intelligence",
+  "model_version": "rf-xgb-customer-v1",
+  "trained_at": "2026-07-11T07:15:27.112340+00:00",
+  "clv_feature_columns": [
+    "industry_encoded",
+    "region_encoded",
+    "credit_limit",
+    "tenure_days"
+  ],
+  "risk_feature_columns": [
+    "industry_encoded",
+    "region_encoded",
+    "credit_limit",
+    "tenure_days",
+    "total_rentals",
+    "avg_discount_pct",
+    "avg_duration_days"
+  ],
+  "encoders": {
+    "industry": [
+      "agriculture",
+      "chemicals",
+      "construction",
+      "events",
+      "logistics",
+      "manufacturing",
+      "mining",
+      "oil_gas",
+      "other",
+      "utilities"
+    ],
+    "region": [
+      "Ahmedabad",
+      "Bengaluru",
+      "Chennai",
+      "Delhi NCR",
+      "Hyderabad",
+      "Jaipur",
+      "Kolkata",
+      "Mumbai",
+      "Pune",
+      "Surat"
+    ]
+  },
+  "clv_metrics": {
+    "mae": 47267.6,
+    "r2_score": -0.0865,
+    "test_set_size": 32
+  },
+  "risk_metrics": {
+    "accuracy": 0.825,
+    "f1_score": 0.2222,
+    "roc_auc": 0.5257,
+    "test_set_size": 40,
+    "positive_count": 22
+  },
+  "discount_rule": {
+    "base_discount_pct": 3.0,
+    "high_clv_percentile": 0.75,
+    "high_clv_bonus_pct": 4.0,
+    "high_risk_penalty_pct": 3.0,
+    "max_discount_pct": 12.0,
+    "min_discount_pct": 0.0
+  },
+  "clv_high_threshold": 132021.8075
+}

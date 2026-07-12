@@ -1,0 +1,35 @@
+{
+  "model_name": "equipment_health",
+  "model_version": "rf-health-v1",
+  "trained_at": "2026-07-11T10:05:14.258688+00:00",
+  "feature_columns": [
+    "type_encoded",
+    "air_temperature_k",
+    "process_temperature_k",
+    "rotational_speed_rpm",
+    "torque_nm",
+    "tool_wear_min",
+    "temp_delta_k",
+    "power_watts",
+    "wear_torque_product",
+    "tool_wear_ratio"
+  ],
+  "target_column": "heuristic_health_score",
+  "type_encoder_classes": [
+    "H",
+    "L",
+    "M"
+  ],
+  "metrics": {
+    "mae": 1.1312,
+    "rmse": 4.6885,
+    "r2_score": 0.7911,
+    "cv_r2_mean": 0.7928,
+    "cv_r2_std": 0.0337,
+    "test_set_size": 2000
+  },
+  "status_thresholds": {
+    "healthy": 70,
+    "warning": 40
+  }
+}

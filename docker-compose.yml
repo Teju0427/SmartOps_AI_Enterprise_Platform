@@ -1,0 +1,66 @@
+# ============================================================
+# AI Rental Decision Intelligence Platform — Local Dev Stack
+# Run: docker compose up -d --build
+# ============================================================
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: rental_ai_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: smart_rental
+    ports:
+      - "5433:5432"   # host:container — 5433 avoids clashing with your existing pgAdmin Postgres on 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: rental_ai_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: rental_ai_backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    environment:
+      # Inside Docker's network, services reach each other by service name,
+      # not "localhost" — this overrides whatever's in .env for container-to-container calls.
+      POSTGRES_SERVER: postgres
+      POSTGRES_PORT: 5432
+      REDIS_HOST: redis
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app          # live code reload during development
+      - ./ml:/app/ml
+      - ./datasets:/app/datasets
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  postgres_data:

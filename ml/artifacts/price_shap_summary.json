@@ -1,0 +1,44 @@
+{
+  "global_feature_importance": [
+    {
+      "feature": "base_daily_rate",
+      "mean_abs_shap": 185.40242
+    },
+    {
+      "feature": "market_competitor_price",
+      "mean_abs_shap": 167.5191
+    },
+    {
+      "feature": "equipment_type_encoded",
+      "mean_abs_shap": 25.13877
+    },
+    {
+      "feature": "duration_days_planned",
+      "mean_abs_shap": 5.34327
+    },
+    {
+      "feature": "health_score",
+      "mean_abs_shap": 1.60747
+    },
+    {
+      "feature": "region_encoded",
+      "mean_abs_shap": 1.34712
+    },
+    {
+      "feature": "inventory_count",
+      "mean_abs_shap": 0.40143
+    },
+    {
+      "feature": "month_sin",
+      "mean_abs_shap": 0.32774
+    },
+    {
+      "feature": "month_cos",
+      "mean_abs_shap": 0.19825
+    },
+    {
+      "feature": "industry_encoded",
+      "mean_abs_shap": 0.15535
+    }
+  ]
+}

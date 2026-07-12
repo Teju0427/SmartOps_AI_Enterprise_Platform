@@ -1,0 +1,63 @@
+{
+  "model_name": "price_prediction",
+  "model_version": "xgb-price-v1",
+  "trained_at": "2026-07-11T07:09:47.874775+00:00",
+  "feature_columns": [
+    "equipment_type_encoded",
+    "health_score",
+    "market_competitor_price",
+    "duration_days_planned",
+    "industry_encoded",
+    "region_encoded",
+    "inventory_count",
+    "month_sin",
+    "month_cos",
+    "base_daily_rate"
+  ],
+  "target_column": "ai_suggested_price",
+  "encoders": {
+    "equipment_type": [
+      "compressor",
+      "crane",
+      "drilling_rig",
+      "excavator",
+      "forklift",
+      "generator",
+      "hvac_unit",
+      "pump",
+      "welding_machine"
+    ],
+    "industry": [
+      "agriculture",
+      "chemicals",
+      "construction",
+      "events",
+      "logistics",
+      "manufacturing",
+      "mining",
+      "oil_gas",
+      "other",
+      "utilities"
+    ],
+    "region": [
+      "Ahmedabad",
+      "Bengaluru",
+      "Chennai",
+      "Delhi NCR",
+      "Hyderabad",
+      "Jaipur",
+      "Kolkata",
+      "Mumbai",
+      "Pune",
+      "Surat"
+    ]
+  },
+  "metrics": {
+    "mae": 5.0,
+    "mape": 0.77,
+    "r2_score": 0.9995,
+    "cv_r2_mean": 0.9995,
+    "cv_r2_std": 0.0001,
+    "test_set_size": 542
+  }
+}

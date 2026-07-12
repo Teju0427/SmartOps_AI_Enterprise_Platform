@@ -1,0 +1,45 @@
+{
+  "model_name": "failure_prediction",
+  "model_version": "xgb-failure-v1",
+  "trained_at": "2026-07-10T14:07:31.259765+00:00",
+  "feature_columns": [
+    "type_encoded",
+    "air_temperature_k",
+    "process_temperature_k",
+    "rotational_speed_rpm",
+    "torque_nm",
+    "tool_wear_min",
+    "temp_delta_k",
+    "power_watts",
+    "wear_torque_product",
+    "tool_wear_ratio"
+  ],
+  "target_column": "Machine failure",
+  "type_encoder_classes": [
+    "H",
+    "L",
+    "M"
+  ],
+  "metrics": {
+    "accuracy": 0.9855,
+    "precision": 0.76,
+    "recall": 0.8382,
+    "f1_score": 0.7972,
+    "roc_auc": 0.9859,
+    "pr_auc": 0.8847,
+    "cv_pr_auc_mean": NaN,
+    "cv_pr_auc_std": NaN,
+    "test_set_size": 2000,
+    "test_set_positives": 68,
+    "confusion_matrix": {
+      "true_negative": 1914,
+      "false_positive": 18,
+      "false_negative": 11,
+      "true_positive": 57
+    }
+  },
+  "risk_tier_thresholds": {
+    "low": 0.15,
+    "medium": 0.45
+  }
+}

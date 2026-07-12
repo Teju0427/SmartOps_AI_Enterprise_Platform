@@ -1,0 +1,34 @@
+{
+  "model_name": "remaining_useful_life",
+  "model_version": "rf-rul-v1",
+  "trained_at": "2026-07-11T02:17:38.519870+00:00",
+  "feature_columns": [
+    "type_encoded",
+    "air_temperature_k",
+    "process_temperature_k",
+    "rotational_speed_rpm",
+    "torque_nm",
+    "tool_wear_min",
+    "temp_delta_k",
+    "power_watts",
+    "wear_torque_product",
+    "tool_wear_ratio"
+  ],
+  "target_column": "rul_days_proxy",
+  "type_encoder_classes": [
+    "H",
+    "L",
+    "M"
+  ],
+  "metrics": {
+    "mae_days": 0.258,
+    "r2_score": 0.9803,
+    "cv_r2_mean": 0.9713,
+    "cv_r2_std": 0.0123,
+    "test_set_size": 2000,
+    "mean_tree_std_days": 0.729
+  },
+  "wear_threshold_mid_min": 220,
+  "daily_wear_rate_min_per_day": 8.0,
+  "confidence_interval_half_width_days": 0.93
+}

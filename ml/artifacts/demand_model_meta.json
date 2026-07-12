@@ -1,0 +1,43 @@
+{
+  "model_name": "demand_forecast",
+  "model_version": "lgbm-demand-v2",
+  "trained_at": "2026-07-11T07:09:49.922401+00:00",
+  "feature_columns": [
+    "lag_1",
+    "lag_2",
+    "lag_4",
+    "rolling_mean_4",
+    "week_of_year_sin",
+    "week_of_year_cos",
+    "week_index"
+  ],
+  "target_column": "demand_count",
+  "metrics": {
+    "mae": 6.527,
+    "r2_score": 0.6488,
+    "naive_baseline_mae": 7.267,
+    "train_set_size": 59,
+    "test_set_size": 15
+  },
+  "granularity_trained_on": "weekly_national",
+  "region_historical_share": {
+    "Kolkata": 0.134,
+    "Jaipur": 0.1233,
+    "Bengaluru": 0.1093,
+    "Pune": 0.1093,
+    "Surat": 0.1082,
+    "Delhi NCR": 0.1052,
+    "Hyderabad": 0.0819,
+    "Ahmedabad": 0.0794,
+    "Chennai": 0.0764,
+    "Mumbai": 0.0731
+  },
+  "latest_state": {
+    "week_start": "2026-07-06",
+    "demand_count": 13.0,
+    "lag_1": 10.0,
+    "lag_2": 18.0,
+    "lag_4": 19.0,
+    "rolling_mean_4": 18.25
+  }
+}
