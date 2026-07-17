@@ -67,15 +67,15 @@ export function LoginPage() {
             <InsightsOutlinedIcon sx={{ color: "#FFFFFF", fontSize: 22 }} />
           </Box>
           <Box>
-            <Typography sx={{ fontWeight: 700, fontSize: 20, lineHeight: 1.1 }}>RentalIQ</Typography>
+            <Typography sx={{ fontWeight: 700, fontSize: 20, lineHeight: 1.1 }}>SmartOps AI</Typography>
             <Typography sx={{ fontSize: 12, color: palette.textOnSidebarMuted }}>
-              Enterprise AI Rental Intelligence Platform
+              Enterprise AI Operations Intelligence Platform
             </Typography>
           </Box>
         </Box>
 
         <Typography sx={{ fontSize: 28, fontWeight: 700, lineHeight: 1.3, maxWidth: 440 }}>
-          Predictive intelligence for your entire equipment fleet.
+          Predictive intelligence for your entire operation.
         </Typography>
         <Typography sx={{ fontSize: 14.5, color: palette.textOnSidebarMuted, mt: 2, maxWidth: 420, lineHeight: 1.7 }}>
           Real-time health scoring, failure prediction, dynamic pricing, and
@@ -97,7 +97,7 @@ export function LoginPage() {
               >
                 <InsightsOutlinedIcon sx={{ color: "#FFFFFF", fontSize: 19 }} />
               </Box>
-              <Typography sx={{ fontWeight: 700, fontSize: 18 }}>RentalIQ</Typography>
+              <Typography sx={{ fontWeight: 700, fontSize: 18 }}>SmartOps AI</Typography>
             </Box>
 
             <Typography sx={{ fontWeight: 700, fontSize: 22, mb: 0.5 }}>Welcome back</Typography>

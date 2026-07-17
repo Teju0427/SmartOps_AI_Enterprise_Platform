@@ -1,5 +1,5 @@
 /**
- * RentalIQ Enterprise Design Tokens.
+ * SmartOps AI Enterprise Design Tokens.
  *
  * Palette direction: Deep Blue primary / Slate Gray secondary, matching
  * the Azure Portal / Power BI / enterprise-ERP register this product is

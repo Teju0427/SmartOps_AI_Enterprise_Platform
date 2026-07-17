@@ -9,13 +9,15 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import { decisionsApi } from "@/api/endpoints";
 import { useThemeColors } from "@/theme/ThemeModeContext";
 
+// Only categories the Decision Engine actually generates - "pricing" and
+// "risk_mitigation" exist as valid backend enum values but are never
+// produced by decision_engine.py's current logic, so including them here
+// only shows an always-empty filter option.
 const CATEGORY_LABELS: Record<string, string> = {
   maintenance: "Maintenance",
   fleet_replacement: "Fleet Replacement",
   inventory_relocation: "Inventory Relocation",
   customer_retention: "Customer Retention",
-  pricing: "Pricing",
-  risk_mitigation: "Risk Mitigation",
 };
 
 const currency = (n: number) =>

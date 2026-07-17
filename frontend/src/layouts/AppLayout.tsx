@@ -18,6 +18,7 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import RequestQuoteOutlinedIcon from "@mui/icons-material/RequestQuoteOutlined";
 import { useThemeColors } from "@/theme/ThemeModeContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useQuery } from "@tanstack/react-query";
@@ -29,6 +30,7 @@ const DRAWER_WIDTH = 252;
 const NAV_ITEMS = [
   { label: "Dashboard", path: "/", icon: <DashboardOutlinedIcon fontSize="small" /> },
   { label: "Equipment", path: "/equipment", icon: <PrecisionManufacturingOutlinedIcon fontSize="small" /> },
+  { label: "Pricing", path: "/pricing", icon: <RequestQuoteOutlinedIcon fontSize="small" /> },
   { label: "AI Decisions", path: "/decisions", icon: <AutoAwesomeOutlinedIcon fontSize="small" /> },
   { label: "Maintenance", path: "/maintenance", icon: <BuildOutlinedIcon fontSize="small" /> },
   { label: "Customers", path: "/customers", icon: <GroupsOutlinedIcon fontSize="small" /> },
@@ -40,6 +42,7 @@ const NAV_ITEMS = [
 const PAGE_TITLES: Record<string, string> = {
   "/": "Dashboard",
   "/equipment": "Equipment",
+  "/pricing": "Pricing",
   "/decisions": "AI Decisions",
   "/maintenance": "Maintenance",
   "/customers": "Customers",
@@ -61,7 +64,7 @@ export function AppLayout() {
     refetchInterval: 60_000,
   });
 
-  const currentTitle = PAGE_TITLES[location.pathname] ?? "RentalIQ";
+  const currentTitle = PAGE_TITLES[location.pathname] ?? "SmartOps AI";
   const today = new Date().toLocaleDateString("en-IN", { weekday: "short", year: "numeric", month: "short", day: "numeric" });
 
   return (
@@ -85,7 +88,7 @@ export function AppLayout() {
           </Box>
           <Box>
             <Typography sx={{ color: palette.textOnSidebar, fontWeight: 700, fontSize: 16, lineHeight: 1.1 }}>
-              RentalIQ
+              SmartOps AI
             </Typography>
             <Typography sx={{ color: palette.textOnSidebarMuted, fontSize: 10.5 }}>
               Enterprise AI Platform
@@ -140,7 +143,7 @@ export function AppLayout() {
             <Box sx={{ flexGrow: 1 }}>
               <Breadcrumbs sx={{ fontSize: 12 }}>
                 <MuiLink underline="hover" sx={{ fontSize: 12, color: palette.textSecondary }} component={NavLink} to="/">
-                  RentalIQ
+                  SmartOps AI
                 </MuiLink>
                 <Typography sx={{ fontSize: 12, color: palette.textPrimary, fontWeight: 600 }}>{currentTitle}</Typography>
               </Breadcrumbs>

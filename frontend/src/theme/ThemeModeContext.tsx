@@ -13,7 +13,7 @@ interface ThemeModeContextValue {
 
 const ThemeModeContext = createContext<ThemeModeContextValue | undefined>(undefined);
 
-const STORAGE_KEY = "rentaliq_theme_mode";
+const STORAGE_KEY = "smartops_theme_mode";
 
 export function ThemeModeProvider({ children }: { children: ReactNode }) {
   const [mode, setMode] = useState<Mode>(() => {

@@ -17,7 +17,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const hasToken = !!localStorage.getItem("rentaliq_access_token");
+    const hasToken = !!localStorage.getItem("smartops_access_token");
     if (!hasToken) {
       setIsLoading(false);
       return;

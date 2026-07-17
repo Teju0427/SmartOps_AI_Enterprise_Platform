@@ -13,6 +13,7 @@ import { DecisionsPage } from "@/pages/DecisionsPage";
 import { MaintenancePage } from "@/pages/MaintenancePage";
 import { CustomersPage } from "@/pages/CustomersPage";
 import { ForecastsPage } from "@/pages/ForecastsPage";
+import { PricingPage } from "@/pages/PricingPage";
 import { ReportsPage } from "@/pages/ReportsPage";
 import { SettingsPage } from "@/pages/SettingsPage";
 
@@ -45,6 +46,7 @@ function ThemedApp() {
               <Route path="maintenance" element={<MaintenancePage />} />
               <Route path="customers" element={<CustomersPage />} />
               <Route path="forecasts" element={<ForecastsPage />} />
+              <Route path="pricing" element={<PricingPage />} />
               <Route path="reports" element={<ReportsPage />} />
               <Route path="settings" element={<SettingsPage />} />
             </Route>

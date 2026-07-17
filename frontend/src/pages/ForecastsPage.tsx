@@ -2,25 +2,27 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Box, Typography, Paper, ToggleButtonGroup, ToggleButton, Grid, Skeleton } from "@mui/material";
 import { forecastsApi } from "@/api/endpoints";
-import { colors } from "@/theme/tokens";
+import { useThemeColors } from "@/theme/ThemeModeContext";
 
 type Granularity = "daily" | "weekly" | "monthly" | "quarterly";
 
 function ForecastCard({ label, value, unit }: { label: string; value: string; unit: string }) {
+  const { palette } = useThemeColors();
   return (
     <Paper sx={{ p: 3, borderRadius: "12px" }}>
-      <Typography sx={{ fontSize: 12.5, color: colors.textSecondary, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.03em" }}>
+      <Typography sx={{ fontSize: 12.5, color: palette.textSecondary, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.03em" }}>
         {label}
       </Typography>
       <Box sx={{ display: "flex", alignItems: "baseline", gap: 1, mt: 0.5 }}>
         <Typography sx={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 32, fontWeight: 700 }}>{value}</Typography>
-        <Typography sx={{ fontSize: 13, color: colors.textSecondary }}>{unit}</Typography>
+        <Typography sx={{ fontSize: 13, color: palette.textSecondary }}>{unit}</Typography>
       </Box>
     </Paper>
   );
 }
 
 export function ForecastsPage() {
+  const { palette } = useThemeColors();
   const [granularity, setGranularity] = useState<Granularity>("weekly");
 
   const { data: demand, isLoading: demandLoading } = useQuery({
@@ -39,7 +41,7 @@ export function ForecastsPage() {
   return (
     <Box>
       <Typography variant="h5" sx={{ mb: 0.5 }}>Forecasts</Typography>
-      <Typography sx={{ color: colors.textSecondary, mb: 3, fontSize: 14 }}>
+      <Typography sx={{ color: palette.textSecondary, mb: 3, fontSize: 14 }}>
         AI-projected demand and revenue, trained on 18 months of seasonal rental history.
       </Typography>
 

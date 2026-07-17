@@ -6,19 +6,19 @@ export const apiClient = axios.create({ baseURL: API_BASE });
 
 function getStoredTokens() {
   return {
-    access: localStorage.getItem("rentaliq_access_token"),
-    refresh: localStorage.getItem("rentaliq_refresh_token"),
+    access: localStorage.getItem("smartops_access_token"),
+    refresh: localStorage.getItem("smartops_refresh_token"),
   };
 }
 
 export function setStoredTokens(access: string, refresh: string) {
-  localStorage.setItem("rentaliq_access_token", access);
-  localStorage.setItem("rentaliq_refresh_token", refresh);
+  localStorage.setItem("smartops_access_token", access);
+  localStorage.setItem("smartops_refresh_token", refresh);
 }
 
 export function clearStoredTokens() {
-  localStorage.removeItem("rentaliq_access_token");
-  localStorage.removeItem("rentaliq_refresh_token");
+  localStorage.removeItem("smartops_access_token");
+  localStorage.removeItem("smartops_refresh_token");
 }
 
 apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
