@@ -121,4 +121,4 @@ Built with a strong emphasis on verification: every ML model trained and evaluat
 
 ## Author
 
-Built by MK Tejaswini (Varsha) — final-year B.Tech, AI & Data Science, REVA University.
+Built by MK Tejaswini — final-year B.Tech, AI & Data Science, REVA University.
