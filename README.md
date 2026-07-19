@@ -2,7 +2,7 @@
 
 An end-to-end AI platform for industrial and enterprise operations — combining machine learning, cloud-native architecture, and business intelligence to support pricing, predictive maintenance, demand forecasting, and customer analytics. Built as a full production-style system: real trained ML models on real sensor data, a normalized PostgreSQL schema, a 27-endpoint authenticated REST API, and a polished enterprise React frontend.
 
-**Live demo:** `<paste your Render URL here>` · **API docs:** `<your-backend-url>/api/v1/docs`
+**Live demo:** `<Link>` · **API docs:** `<your-backend-url>/api/v1/docs`
 
 ---
 
